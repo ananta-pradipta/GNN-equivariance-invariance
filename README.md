@@ -1,10 +1,3 @@
-# HW2: GNN Equivariance & Invariance — Report
-
-**Learning goals (from assignment):**  
-- Verify node-level permutation **equivariance** of message-passing GNNs.  
-- Verify graph-level permutation **invariance** using permutation-invariant readouts.  
-- Show when/why these properties **break** (counterexample). :contentReference[oaicite:2]{index=2}
-
 ## A) Node-level permutation equivariance (Cora)
 **Experiment:** 2-layer GCN (`cached=False`, `eval()`), 3 random permutations P of nodes.  
 **Test:** Check `allclose(f(PX, PAP^T), P f(X, A))` with `atol=1e-6`.  
