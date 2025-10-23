@@ -12,7 +12,7 @@ A) Node-level permutation equivariance (Cora)
 `allclose(f(PX, PAP^T), P f(X, A), atol=1e-6)`
 
 **Result:**\
-All three permutations passed ✅
+All three permutations passed
 
 **Sketch:**\
 Each GCN layer applies
@@ -58,14 +58,17 @@ For 3 permutations per graph, verify pooled vectors are unchanged.
 **Result:**\
 All permutations passed for all three pools
 
-**Sketch:**  
-Let \( h \in \mathbb{R}^{N \times d} \) be node embeddings and \( P \) a permutation.  
+**Sketch:**\
+Let $h \in \mathbb{R}^{N \times d}$ be node embeddings and $P$ a permutation.
 
-- **Sum:** \( \sum_i (Ph)_i = \sum_i h_i \)  
-- **Mean:** same up to division by \( N \)  
-- **Max:** permutation of indices does not change the elementwise maxima  
+* **Sum:** $\sum_i (Ph)_i = \sum_i h_i$
+* **Mean:** same up to division by $N$
+* **Max:** permutation of indices does not change the elementwise maxima
 
-Therefore, \( g\!\big(f(PX, PAP^\top)\big) = g\!\big(f(X, A)\big) \) for sum, mean, and max pooling.
+Therefore,
+$$g(f(PX, PAP^T)) = g(f(X,A))$$
+for sum, mean, and max pooling.
+
 
 * * * * *
 
