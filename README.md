@@ -22,8 +22,9 @@ $$
 $$
 
 
-followed by a pointwise nonlinearity.\
-For a permutation matrix P:
+followed by a pointwise nonlinearity.
+
+For a permutation matrix $P$:
 
 $$
 \hat{A}' = P \hat{A} P^\top, \quad \hat{D}' = P \hat{D} P^\top
@@ -72,23 +73,21 @@ for sum, mean, and max pooling.
 
 * * * * *
 
-Counterexample (required)
+Counterexample
 -------------------------
 
 **Readout:**\
 Take the embedding of **node 0** (no pooling).
 
 **Why it fails:**\
-After permutation, "node 0" refers to a *different* vertex, so the readout changes --- it is **not permutation-invariant**.\
-Our test confirmed a mismatch for random permutations, as expected.
+After permutation, "node 0" refers to a *different* vertex, so the readout changes, it is **not permutation-invariant**.\
+The test confirmed a mismatch for random permutations, as expected.
 
 * * * * *
 
-Notes & sanity checks
+Notes
 ---------------------
 
 -   All tests run in `eval()` mode to avoid randomness; tolerance `atol=1e-6` matches the specification.
 
 -   Used simple features; if a MUTAG graph lacks `x`, node degree (float) is substituted.
-
--   Deliverables match the requested structure (`tests.py`, `model.py`, `report.md`).
